@@ -1,0 +1,99 @@
+/* styles.css */
+
+/* Общие стили */
+body {
+    background-color: #121212; /* темный фон */
+    color: #e0e0e0; /* светлый цвет текста */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Стили для заголовков */
+h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 30px;
+    color: #ffffff;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+/* Стили для формы */
+form {
+    background-color: #1f1f1f; /* темный фон для формы */
+    padding: 60px;
+    border-radius: 16px;
+    margin: 40px auto;
+    max-width: 400px;
+}
+
+label {
+    color: #cfcfcf; /* светлый текст для меток */
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #444444;
+    background-color: #2b2b2b;
+    color: #e0e0e0;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #6200ea; /* фиолетовая кнопка */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3700b3; /* темный фиолетовый на ховер */
+}
+
+/* Стили для таблицы */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #444444;
+}
+
+th {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+td {
+    background-color: #222222;
+}
+
+/* Мобильная адаптивность */
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+        width: 90%;
+    }
+
+    table {
+        width: 100%;
+    }
+}

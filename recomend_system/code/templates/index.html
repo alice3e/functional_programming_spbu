@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendation System</title>
+</head>
+<body>
+    <h1>Book Recommendation System</h1>
+
+    <form method="POST" action="/recommend">
+        <label for="title">Favorite Title:</label>
+        <input type="text" id="title" name="title" value="{{ user_preferences.title | default('') }}"><br><br>
+    
+        <label for="category">Favorite Category:</label>
+        <input type="text" id="category" name="category" value="{{ user_preferences.category | default('') }}"><br><br>
+    
+        <label for="description">Preferred Keywords (Description):</label>
+        <input type="text" id="description" name="description" value="{{ user_preferences.description | default('') }}"><br><br>
+    
+        <label for="author">Author (optional):</label>
+        <input type="text" id="author" name="author" value="{{ user_preferences.author | default('') }}"><br><br>
+    
+        <!-- Фильтры -->
+        <label for="filter_category">Filter by Category:</label>
+        <input type="text" id="filter_category" name="filter_category" value="{{ user_preferences.filter_category | default('') }}"><br><br>
+    
+        <label for="filter_year">Filter by Year (after):</label>
+        <input type="number" id="filter_year" name="filter_year" value="{{ user_preferences.filter_year | default('') }}"><br><br>
+    
+        <!-- Сортировка -->
+        <label for="sort_by">Sort by:</label>
+        <select id="sort_by" name="sort_by">
+            <option value="Similarity_score" {% if user_preferences.sort_by == 'Similarity_score' %}selected{% endif %}>Similarity Score</option>
+            <option value="Title" {% if user_preferences.sort_by == 'Title' %}selected{% endif %}>Title</option>
+            <option value="Publish Date" {% if user_preferences.sort_by == 'Publish Date' %}selected{% endif %}>Publish Date</option>
+        </select><br><br>
+    
+        <button type="submit">Get Recommendations</button>
+    </form>
+    
+
+    {% if recommendations %}
+    <h2>Recommended Books</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Author</th>
+                <th>Similarity Score</th>
+                <th>Publish Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in recommendations %}
+            <tr>
+                <td>{{ book['Title'] }}</td>
+                <td>{{ book['Category'] }}</td>
+                <td>{{ book['Authors'] }}</td>
+                <td>{{ book['Similarity_score'] }}</td>
+                <td>{{ book['Publish Date'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <!-- Кнопка для сохранения рекомендаций -->
+    <button id="saveButton">Save Recommendations</button>
+    {% endif %}
+
+    <script>
+        document.getElementById("saveButton").addEventListener("click", function() {
+            let recommendations = [];
+            {% for book in recommendations %}
+                recommendations.push({
+                    'Title': '{{ book["Title"] }}',
+                    'Category': '{{ book["Category"] }}',
+                    'Similarity_score': '{{ book["Similarity_score"] }}',
+                    'Authors': '{{ book["Authors"] }}',
+                });
+            {% endfor %}
+
+            fetch('/save', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(recommendations)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>

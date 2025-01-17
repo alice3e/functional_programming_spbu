@@ -1,0 +1,26 @@
+2024-12-09 10:15:57,805 - INFO - Successfully connected to the server.
+2024-12-09 10:15:57,809 - INFO - Server response: andrei has joined the room!
+2024-12-09 10:16:01,805 - INFO - lesha has joined the room!
+2024-12-09 10:16:09,486 - INFO - Message sent: hello lesha
+2024-12-09 10:16:09,489 - INFO - andrei: hello lesha
+2024-12-09 10:16:20,264 - INFO - lesha: hello andrei /happy
+2024-12-09 10:16:27,876 - INFO - lesha: ʚ(•｀
+2024-12-09 10:16:37,488 - INFO - lesha: wow (ノಠ ∩ಠ)ノ彡( \o°o)\
+2024-12-09 10:16:54,246 - INFO - Message sent: /listrooms
+2024-12-09 10:16:54,250 - INFO - List of rooms:
+2024-12-09 10:16:54,250 - INFO - Room 1: andrei, lesha
+2024-12-09 10:17:02,971 - INFO - Message sent: /quit
+2024-12-09 10:17:02,977 - INFO - andrei has left the room.
+2024-12-09 10:17:06,062 - INFO - Successfully connected to the server.
+2024-12-09 10:17:06,071 - INFO - Server response: andrei has joined the room!
+2024-12-09 10:17:08,721 - INFO - Message sent: wow
+2024-12-09 10:17:08,728 - INFO - andrei: wow
+2024-12-09 10:17:23,502 - INFO - lesha has joined the room!
+2024-12-09 10:17:27,179 - INFO - lesha: awjkhdkajd
+2024-12-09 10:17:33,537 - INFO - Message sent: /help
+2024-12-09 10:17:33,543 - INFO - Welcome to the chat server! Here are some commands you can use:
+2024-12-09 10:17:33,544 - INFO - /help - Show this help message
+2024-12-09 10:17:33,544 - INFO - /listrooms - List all rooms and the users inside
+2024-12-09 10:17:33,544 - INFO - /quit - Exit the chat
+2024-12-09 10:17:38,972 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-7' coro=<ChatClient.receive_messages() running at /Users/alicee/Desktop/Work_Main/func_prog/chat_async/client/client.py:135> wait_for=<Future pending cb=[Task.task_wakeup()]>>

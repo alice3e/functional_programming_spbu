@@ -1,0 +1,22 @@
+2024-12-09 10:16:01,802 - INFO - Successfully connected to the server.
+2024-12-09 10:16:01,805 - INFO - Server response: lesha has joined the room!
+2024-12-09 10:16:09,489 - INFO - andrei: hello lesha
+2024-12-09 10:16:20,260 - INFO - Message sent: hello andrei /happy
+2024-12-09 10:16:20,265 - INFO - lesha: hello andrei /happy
+2024-12-09 10:16:27,873 - INFO - Message sent: /chicken
+2024-12-09 10:16:27,878 - INFO - lesha: ʚ(•｀
+2024-12-09 10:16:37,483 - INFO - Message sent: wow /flip-friend
+2024-12-09 10:16:37,488 - INFO - lesha: wow (ノಠ ∩ಠ)ノ彡( \o°o)\
+2024-12-09 10:17:02,973 - INFO - andrei has left the room.
+2024-12-09 10:17:15,410 - INFO - Message sent: /listrooms
+2024-12-09 10:17:15,417 - INFO - List of rooms:
+2024-12-09 10:17:15,417 - INFO - Room 1: lesha
+2024-12-09 10:17:15,417 - INFO - Room 2: andrei
+2024-12-09 10:17:20,705 - INFO - Message sent: /quit
+2024-12-09 10:17:20,714 - INFO - lesha has left the room.
+2024-12-09 10:17:23,500 - INFO - Successfully connected to the server.
+2024-12-09 10:17:23,504 - INFO - Server response: lesha has joined the room!
+2024-12-09 10:17:27,177 - INFO - Message sent: awjkhdkajd
+2024-12-09 10:17:27,181 - INFO - lesha: awjkhdkajd
+2024-12-09 10:17:40,049 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-9' coro=<ChatClient.receive_messages() running at /Users/alicee/Desktop/Work_Main/func_prog/chat_async/client/client.py:135> wait_for=<Future pending cb=[Task.task_wakeup()]>>
